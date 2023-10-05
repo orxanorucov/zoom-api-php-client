@@ -82,7 +82,8 @@ class Request {
             return isset($result['access_token']) ? $result['access_token'] : '';
 
         } catch (ClientException $e) {
-            return (array)json_decode($e->getResponse()->getBody()->getContents());
+            print($e->getResponse()->getBody()->getContents())
+            return "";
         }
     }
 
